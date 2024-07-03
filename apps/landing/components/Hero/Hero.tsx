@@ -29,72 +29,78 @@ function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const Hero = () => {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 h-screen">
+    <div className="relative flex-none overflow-hidden px-6 lg:pointer-events-none lg:fixed lg:inset-0 lg:z-40 lg:flex lg:px-0">
+      <Glow />
       <StarField className="absolute lg:left-60 lg:top-5" />
       <StarField className="top-3/4 lg:right-32" />
-      <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-32 lg:flex lg:px-8 lg:py-40">
-        <div className="mx-auto max-w-2xl items-center justify-center flex flex-shrink-0 lg:mx-0 lg:max-w-md lg:pt-8">
-          <Glow />
-          <div className="mt-16 md:mt-0">
-            <Link href="/">
-              <Image
-                className="h-8 my-8"
-                width={32}
-                height={32}
-                src="/ascendio.png"
-                alt="Ascendio"
-              />
-            </Link>
-            <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-              <span className="text-sky-300 italic">Ascend</span> a turborepo
-              project in seconds.
-            </h1>
-            <p className="mt-4 text-sm/6 text-gray-300">
-              Designed to simplify the initial setup of your turborepo project.
-              Ideal for indie developers or people looking to create a micro
-              SaaS.
-            </p>
-            <pre className="bg-black/30 p-2 rounded-lg text-white text-sm hidden mt-5">
-              pnpm @ascendio/cli@latest create
-            </pre>
-            <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
-              <Link
-                target="_blank"
-                href="https://docs.ascendio.dev"
-                className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
-              >
-                <BookIcon className="w-4 h-4 text-gray-500 group-hover:text-sky-300" />
-                <small className="text-white">Documentation</small>
-              </Link>
-              <Link
-                target="_blank"
-                href="https://github.com/wendelfreitas"
-                className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
-              >
-                <GitHubIcon className="w-4 h-4 text-gray-500 group-hover:text-sky-300" />
-                <small className="text-white">Github</small>
-              </Link>
-              <Link
-                target="_blank"
-                href="https://x.com/wendeltsx"
-                className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
-              >
-                <XIcon className="w-3 h-3 text-gray-500 group-hover:text-sky-300" />
-                <small className="text-white">wendeltsx</small>
-              </Link>
+      <div className="relative flex w-full lg:pointer-events-auto lg:overflow-y-auto lg:overflow-x-hidden lg:pl-[max(4rem,calc(50%-38rem))]">
+        <div className="mx-auto max-w-lg lg:mx-0 lg:flex lg:w-96 lg:max-w-none lg:flex-col lg:before:flex-1 lg:before:pt-6 ">
+          <div className="pb-16 pt-20 sm:pb-20 sm:pt-32 lg:py-20 ">
+            <div className="relative">
+              <div className="mt-16 md:mt-0">
+                <Link href="/">
+                  <Image
+                    className="h-8 my-8"
+                    width={250}
+                    height={32}
+                    src="/ascendio.png"
+                    alt="Ascendio"
+                  />
+                </Link>
+                <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
+                  <span className="text-sky-300 italic">Ascend</span> a
+                  turborepo project in seconds.
+                </h1>
+                <p className="mt-4 text-sm/6 text-gray-300">
+                  Designed to simplify the initial setup of your turborepo
+                  project. Ideal for indie developers or people looking to
+                  create a micro SaaS.
+                </p>
+                <pre className="bg-black/30 p-2 rounded-lg text-white text-sm hidden mt-5">
+                  pnpm @ascendio/cli@latest create
+                </pre>
+                <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
+                  <Link
+                    target="_blank"
+                    href="https://docs.ascendio.dev"
+                    className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
+                  >
+                    <BookIcon className="w-4 h-4 text-gray-500 group-hover:text-sky-300" />
+                    <small className="text-white">Documentation</small>
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://github.com/wendelfreitas"
+                    className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
+                  >
+                    <GitHubIcon className="w-4 h-4 text-gray-500 group-hover:text-sky-300" />
+                    <small className="text-white">Github</small>
+                  </Link>
+                  <Link
+                    target="_blank"
+                    href="https://x.com/wendeltsx"
+                    className="flex items-center group space-x-2 hover:bg-gray-400/10 rounded-md py-1 px-2"
+                  >
+                    <XIcon className="w-3 h-3 text-gray-500 group-hover:text-sky-300" />
+                    <small className="text-white">wendeltsx</small>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="flex flex-1 items-end justify-center pb-4 lg:justify-start lg:pb-6" />
         </div>
-        <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
-          <div className="max-w-3xl flex-none sm:max-w-5xl z-10 lg:max-w-none">
-            <Image
-              alt="Preview ascendio cli"
-              src="/preview-ascendio.png"
-              width={800}
-              height={800}
-              className="w-[50rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
-            />
-          </div>
+      </div>
+      <div className="mx-auto items-center flex max-w-2xl lg:max-w-none lg:flex-none ">
+        <div className="mb-32 max-w-3xl flex-none sm:max-w-5xl z-10">
+          <Image
+            alt="Preview ascendio cli"
+            src="/preview-ascendio.png"
+            width={800}
+            height={800}
+            className="w-[56rem] mb-10 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+          />
+          <div className="h-10 lg:hidden" />
         </div>
       </div>
     </div>

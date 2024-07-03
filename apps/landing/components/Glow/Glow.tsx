@@ -6,7 +6,7 @@ export const Glow = () => {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-full">
       <svg
-        className="absolute -bottom-48 left-[-40%] h-[120rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[400rem]"
+        className="absolute -bottom-48 left-[-40%] h-[80rem] w-[180%] lg:-right-40 lg:bottom-auto lg:left-auto lg:top-[-40%] lg:h-[180%] lg:w-[300rem]"
         aria-hidden="true"
       >
         <defs>
