@@ -1,6 +1,7 @@
 import { StarField } from '../StarField/StarField';
 import { Glow } from '../Glow/Glow';
 import Link from 'next/link';
+import Image from 'next/image';
 
 function BookIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -14,21 +15,6 @@ function GitHubIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor" {...props}>
       <path d="M8 .198a8 8 0 0 0-8 8 7.999 7.999 0 0 0 5.47 7.59c.4.076.547-.172.547-.384 0-.19-.007-.694-.01-1.36-2.226.482-2.695-1.074-2.695-1.074-.364-.923-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.224 1.873.87 2.33.666.072-.518.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.954 0-.873.31-1.586.823-2.146-.09-.202-.36-1.016.07-2.118 0 0 .67-.214 2.2.82a7.67 7.67 0 0 1 2-.27 7.67 7.67 0 0 1 2 .27c1.52-1.034 2.19-.82 2.19-.82.43 1.102.16 1.916.08 2.118.51.56.82 1.273.82 2.146 0 3.074-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38A7.972 7.972 0 0 0 16 8.199a8 8 0 0 0-8-8Z" />
-    </svg>
-  );
-}
-
-function FeedIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      x="0px"
-      y="0px"
-      width="100"
-      height="100"
-      viewBox="0 0 50 50"
-    >
-      <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
     </svg>
   );
 }
@@ -51,7 +37,13 @@ export const Hero = () => {
           <Glow />
           <div className="mt-16 md:mt-0">
             <Link href="/">
-              <img className="h-8 my-8" src="/ascendio.png" alt="Ascendio" />
+              <Image
+                className="h-8 my-8"
+                width={32}
+                height={32}
+                src="/ascendio.png"
+                alt="Ascendio"
+              />
             </Link>
             <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
               <span className="text-sky-300 italic">Ascend</span> a turborepo
@@ -95,10 +87,11 @@ export const Hero = () => {
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
           <div className="max-w-3xl flex-none sm:max-w-5xl z-10 lg:max-w-none">
-            <img
+            <Image
+              alt="Preview ascendio cli"
               src="/preview-ascendio.png"
-              width={2432}
-              height={1442}
+              width={800}
+              height={800}
               className="w-[50rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
             />
           </div>

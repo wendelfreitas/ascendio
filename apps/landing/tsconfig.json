@@ -7,8 +7,8 @@
         "name": "next"
       }
     ],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext"
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   },
   "include": [
     "next-env.d.ts",

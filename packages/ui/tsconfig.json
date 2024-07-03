@@ -5,8 +5,8 @@
     "allowUmdGlobalAccess": true,
     "outDir": "dist",
     "jsx": "react-jsx",
-    "module": "esnext",
-    "moduleResolution": "Node",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "noUnusedLocals": true
   },
 

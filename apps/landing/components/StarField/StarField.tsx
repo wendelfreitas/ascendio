@@ -4,9 +4,9 @@ import { useEffect, useId, useRef } from 'react';
 import clsx from 'classnames';
 import { type TimelineSegment, animate, timeline } from 'motion';
 
-type Star = [x: number, y: number, dim?: boolean, blur?: boolean];
+type StarProps = [x: number, y: number, dim?: boolean, blur?: boolean];
 
-const stars: Array<Star> = [
+const stars: Array<StarProps> = [
   [4, 4, true, true],
   [4, 44, true],
   [36, 22],
@@ -43,7 +43,7 @@ const stars: Array<Star> = [
   [852, 89],
 ];
 
-const constellations: Array<Array<Star>> = [
+const constellations: Array<Array<StarProps>> = [
   [
     [247, 103],
     [261, 86],
@@ -72,7 +72,7 @@ function Star({
   point: [cx, cy, dim, blur],
 }: {
   blurId: string;
-  point: Star;
+  point: StarProps;
 }) {
   const groupRef = useRef<React.ElementRef<'g'>>(null);
   const ref = useRef<React.ElementRef<'circle'>>(null);
@@ -130,7 +130,7 @@ function Constellation({
   points,
   blurId,
 }: {
-  points: Array<Star>;
+  points: Array<StarProps>;
   blurId: string;
 }) {
   const ref = useRef<React.ElementRef<'path'>>(null);
