@@ -1,0 +1,20 @@
+{
+  "name": "@ascendio/utils",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {},
+  "exports": {
+    "./helpers": {
+      "types": "./src/helpers/index.ts",
+      "default": "./dist/helpers/index.js"
+    }
+  },
+  "devDependencies": {
+    "@ascendio/typescript-config": "workspace:*",
+    "@ascendio/eslint-config": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "^8.57.0",
+    "typescript": "^5.2.2"
+  }
+}

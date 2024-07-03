@@ -1,0 +1,21 @@
+{
+  "extends": "@ascendio/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext"
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.js",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

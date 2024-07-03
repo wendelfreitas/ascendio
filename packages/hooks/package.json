@@ -1,0 +1,23 @@
+{
+  "name": "@ascendio/hooks",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint src --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@ascendio/eslint-config": "workspace:*",
+    "@ascendio/typescript-config": "workspace:*",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}

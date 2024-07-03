@@ -1,0 +1,14 @@
+{
+  "extends": "@ascendio/typescript-config/base.json",
+  "compilerOptions": {
+    "isolatedModules": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "module": "ES2020",
+    "moduleResolution": "Bundler"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "template"]
+}
