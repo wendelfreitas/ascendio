@@ -81,7 +81,7 @@ export function Intro() {
           target="__blank"
           className="flex-none"
         >
-          Gitub
+          GitHub
         </IconLink>
         <IconLink
           target="__blank"
