@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import { useEffect, useId, useRef } from 'react'
-import { type TimelineSegment, animate, timeline } from 'motion'
-import clsx from 'classnames'
+import { useEffect, useId, useRef } from 'react';
+import { type TimelineSegment, animate, timeline } from 'motion';
+import clsx from 'classnames';
 
-type Star = [x: number, y: number, dim?: boolean, blur?: boolean]
+type Star = [x: number, y: number, dim?: boolean, blur?: boolean];
 
 const stars: Array<Star> = [
   [4, 4, true, true],
@@ -41,7 +41,7 @@ const stars: Array<Star> = [
   [785, 158, true],
   [832, 146, true, true],
   [852, 89],
-]
+];
 
 const constellations: Array<Array<Star>> = [
   [
@@ -65,24 +65,24 @@ const constellations: Array<Array<Star>> = [
     [823, 164],
     [803, 120],
   ],
-]
+];
 
 function Star({
   blurId,
   point: [cx, cy, dim, blur],
 }: {
-  blurId: string
-  point: Star
+  blurId: string;
+  point: Star;
 }) {
-  let groupRef = useRef<React.ElementRef<'g'>>(null)
-  let ref = useRef<React.ElementRef<'circle'>>(null)
+  let groupRef = useRef<React.ElementRef<'g'>>(null);
+  let ref = useRef<React.ElementRef<'circle'>>(null);
 
   useEffect(() => {
     if (!groupRef.current || !ref.current) {
-      return
+      return;
     }
 
-    let delay = Math.random() * 2
+    let delay = Math.random() * 2;
 
     let animations = [
       animate(groupRef.current, { opacity: 1 }, { duration: 4, delay }),
@@ -97,16 +97,16 @@ function Star({
           duration: Math.random() * 2 + 2,
           direction: 'alternate',
           repeat: Infinity,
-        },
+        }
       ),
-    ]
+    ];
 
     return () => {
       for (let animation of animations) {
-        animation.cancel()
+        animation.cancel();
       }
-    }
-  }, [dim])
+    };
+  }, [dim]);
 
   return (
     <g ref={groupRef} className="opacity-0">
@@ -123,26 +123,26 @@ function Star({
         filter={blur ? `url(#${blurId})` : undefined}
       />
     </g>
-  )
+  );
 }
 
 function Constellation({
   points,
   blurId,
 }: {
-  points: Array<Star>
-  blurId: string
+  points: Array<Star>;
+  blurId: string;
 }) {
-  let ref = useRef<React.ElementRef<'path'>>(null)
+  let ref = useRef<React.ElementRef<'path'>>(null);
   let uniquePoints = points.filter(
     (point, pointIndex) =>
-      points.findIndex((p) => String(p) === String(point)) === pointIndex,
-  )
-  let isFilled = uniquePoints.length !== points.length
+      points.findIndex((p) => String(p) === String(point)) === pointIndex
+  );
+  let isFilled = uniquePoints.length !== points.length;
 
   useEffect(() => {
     if (!ref.current) {
-      return
+      return;
     }
 
     let sequence: Array<TimelineSegment> = [
@@ -151,22 +151,22 @@ function Constellation({
         { strokeDashoffset: 0, visibility: 'visible' },
         { duration: 5, delay: Math.random() * 3 + 2 },
       ],
-    ]
+    ];
 
     if (isFilled) {
       sequence.push([
         ref.current,
         { fill: 'rgb(255 255 255 / 0.02)' },
         { duration: 1 },
-      ])
+      ]);
     }
 
-    let animation = timeline(sequence)
+    let animation = timeline(sequence);
 
     return () => {
-      animation.cancel()
-    }
-  }, [isFilled])
+      animation.cancel();
+    };
+  }, [isFilled]);
 
   return (
     <>
@@ -185,11 +185,11 @@ function Constellation({
         <Star key={pointIndex} point={point} blurId={blurId} />
       ))}
     </>
-  )
+  );
 }
 
 export function StarField({ className }: { className?: string }) {
-  let blurId = useId()
+  let blurId = useId();
 
   return (
     <svg
@@ -197,8 +197,8 @@ export function StarField({ className }: { className?: string }) {
       fill="white"
       aria-hidden="true"
       className={clsx(
-        'pointer-events-none absolute w-[55.0625rem] origin-top-right rotate-[30deg] overflow-visible opacity-70',
-        className,
+        'pointer-events-none absolute w-[55.0625rem] origin-top-right  overflow-visible opacity-70',
+        className
       )}
     >
       <defs>
@@ -217,5 +217,5 @@ export function StarField({ className }: { className?: string }) {
         <Star key={pointIndex} point={point} blurId={blurId} />
       ))}
     </svg>
-  )
+  );
 }
