@@ -1,1 +1,7 @@
-module.exports = require('../../packages/ui/postcss.config');
+module.exports = {
+  plugins: {
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};

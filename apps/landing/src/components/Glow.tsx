@@ -1,7 +1,7 @@
-import { useId } from 'react';
+import { useId } from 'react'
 
 export const Glow = () => {
-  const id = useId();
+  const id = useId()
 
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden bg-gray-950 lg:right-[calc(max(2rem,50%-38rem)+40rem)] lg:min-w-full">
@@ -36,5 +36,5 @@ export const Glow = () => {
       </svg>
       <div className="absolute inset-x-0 bottom-0 right-0 h-px bg-white mix-blend-overlay lg:left-auto lg:top-0 lg:h-auto lg:w-px" />
     </div>
-  );
-};
+  )
+}
