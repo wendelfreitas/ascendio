@@ -10,6 +10,7 @@ import {
 import { scaffold } from '../utils/helpers/scaffold';
 import { logger } from '../utils/logger';
 import { getAllComponents } from '../utils/helpers/get-all-components';
+import { prerequisites } from '../utils/helpers/verify-versions';
 import chalk from 'chalk';
 import path from 'path';
 
@@ -21,6 +22,8 @@ export const create = new Command()
   });
 
 export async function run() {
+  await prerequisites();
+
   p.intro(HELLO_ASCENDIO);
 
   p.note(DESCRIPTION, TITLE);
