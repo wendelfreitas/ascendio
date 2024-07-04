@@ -15,7 +15,7 @@ import path from 'path';
 
 export const create = new Command()
   .name('create')
-  .description('An example command')
+  .description('Start the interactive CLI to create a Ascendio project.')
   .action(async () => {
     await run();
   });
