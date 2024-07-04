@@ -1,7 +1,7 @@
-# @ascendio/cli
+# Ascendio
 
 ## 0.0.0
 
 ### First release
 
-This is the first release of the example CLI.
+Release for Ascendio tests.

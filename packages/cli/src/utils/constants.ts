@@ -6,14 +6,14 @@ import chalk from 'chalk';
 const FILENAME = fileURLToPath(import.meta.url);
 
 const LETTERS = [
-    chalk.red('A'),
-    chalk.cyan('S'),
-    chalk.yellow('C'),
-    chalk.magenta('E'),
-    chalk.white('N'),
-    chalk.green('D'),
-    chalk.red('I'),
-    chalk.cyan('O'),
+  chalk.red('A'),
+  chalk.cyan('S'),
+  chalk.yellow('C'),
+  chalk.magenta('E'),
+  chalk.white('N'),
+  chalk.green('D'),
+  chalk.red('I'),
+  chalk.cyan('O'),
 ];
 
 const DIST_PATH = path.dirname(FILENAME);
@@ -35,17 +35,29 @@ export const DESCRIPTION = `Ascendio ${chalk.italic('(A-CÊN-dio)')}  \n\n${chal
 export const HELLO_ASCENDIO = LETTERS.join('');
 
 export const COMPONENTS = [
-    'Button',
-    'Checkbox',
-    'Input',
-    'Label',
-    'Skeleton',
-    'Switch',
+  'Accordion',
+  'Alert',
+  'Button',
+  'Checkbox',
+  'Input',
+  'Label',
+  'Skeleton',
+  'Switch',
 ];
 
-export const COMPONENTS_DEPENDECY = {
-    Button: {
-        components: [],
-        packages: [],
-    },
+export const COMPONENTS_DEPENDENCY: {
+  [key: string]: {
+    components: string[];
+    packages: string[];
+  };
+} = {
+  Button: {
+    components: ['Label'],
+    packages: [],
+  },
+
+  Label: {
+    components: ['Button', 'Accordion'],
+    packages: [],
+  },
 };

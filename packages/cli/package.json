@@ -1,7 +1,7 @@
 {
-  "name": "@ascendio/cli",
+  "name": "ascendio",
   "version": "0.0.0",
-  "description": "An example CLI tool",
+  "description": "An CLI designed to simplify the initial setup of your turborepo project. Ideal for indie developers or people looking to create a micro SaaS.",
   "publishConfig": {
     "access": "public"
   },
@@ -11,8 +11,27 @@
   "types": "dist/index.d.ts",
   "exports": "./dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "template",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "package.json"
   ],
+  "keywords": [
+    "ascendio",
+    "init.tips",
+    "storybook",
+    "jest",
+    "next.js",
+    "tailwind",
+    "typescript",
+    "shadcn",
+    "ui"
+  ],
+  "engines": {
+    "node": ">=18.17.0"
+  },
   "scripts": {
     "dev": "tsup --watch",
     "build": "tsup",
