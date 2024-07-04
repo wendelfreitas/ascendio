@@ -1,7 +1,29 @@
 import { Intro } from '@/components/Intro';
 import { StarField } from '@/components/StarField';
 import { Glow } from './Glow';
+import { IconLink } from './IconLink';
 import Image from 'next/image';
+
+function CoffeIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 2v2" />
+      <path d="M14 2v2" />
+      <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
+      <path d="M6 2v2" />
+    </svg>
+  );
+}
 
 export const Hero = () => {
   return (
@@ -16,7 +38,16 @@ export const Hero = () => {
               <Intro />
             </div>
           </div>
-          <div className="flex flex-1 items-end justify-center pb-4 lg:justify-start lg:pb-6" />
+          <div className="flex flex-1 items-end justify-center pb-4 lg:justify-start lg:pb-6">
+            <IconLink
+              target="__blank"
+              href="https://buymeacoffee.com/wendelfreitas"
+              icon={CoffeIcon}
+              className="flex-none"
+            >
+              Buy me a coffe to support the project
+            </IconLink>
+          </div>
         </div>
       </div>
       <div className="mx-auto flex max-w-2xl items-center lg:max-w-none lg:flex-none">
