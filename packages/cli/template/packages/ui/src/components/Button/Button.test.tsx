@@ -15,29 +15,25 @@ describe('<Button />', () => {
   it('should render primary button', () => {
     const onClick = jest.fn();
 
-    render(
-      <Button variant="primary" onClick={onClick}>
-        Hello World
-      </Button>
-    );
+    render(<Button onClick={onClick}>Hello World</Button>);
 
     const button = screen.getByText('Hello World');
 
-    expect(button).toHaveClass('bg-primary-500');
+    expect(button).toHaveClass('bg-primary');
   });
 
   it('should render danger button', () => {
     const onClick = jest.fn();
 
     render(
-      <Button variant="danger" onClick={onClick}>
+      <Button variant="destructive" onClick={onClick}>
         Hello World
       </Button>
     );
 
     const button = screen.getByText('Hello World');
 
-    expect(button).toHaveClass('bg-red-500');
+    expect(button).toHaveClass('bg-destructive');
   });
 
   it('should render a slot component', () => {

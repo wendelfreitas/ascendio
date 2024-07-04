@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+const nextConfig = {
+  transpilePackages: ['@ascendio/ui'],
+};
 
 export default nextConfig;

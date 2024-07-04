@@ -5,8 +5,8 @@
     "outDir": "dist",
     "allowUmdGlobalAccess": false,
     "jsx": "react-jsx",
-    "module": "esnext",
-    "moduleResolution": "Node"
+    "module": "ESNext",
+    "moduleResolution": "Bundler"
   },
   "include": ["src", "turbo"],
   "exclude": ["node_modules", "dist"]

@@ -9,6 +9,26 @@ import { checkIfExists } from './check-if-project-exists';
 import { Project } from '../types';
 import { cleanProject } from './clean-project';
 
+function renameFilesAsync(
+  allFiles: string[],
+  filesToRename: string[],
+  directory: string
+) {
+  allFiles.forEach((file) => {
+    if (filesToRename.includes(file)) {
+      const oldPath = path.join(directory, file);
+      const newPath = path.join(directory, file.replace(/^_/, '.'));
+      fs.rename(oldPath, newPath, (err) => {
+        if (err) {
+          console.error(`Error renaming ${oldPath} -> ${newPath}:`, err);
+        } else {
+          console.log(`Renamed: ${oldPath} -> ${newPath}`);
+        }
+      });
+    }
+  });
+}
+
 export const scaffold = async (project: Project) => {
   const template = path.join(PACKAGE_ROOT, 'template');
 
@@ -35,6 +55,12 @@ export const scaffold = async (project: Project) => {
   const filePaths = getAllFilePaths(project.directory);
 
   replaceWordInFiles(filePaths, 'daito', `${project.name}`);
+
+  renameFilesAsync(
+    filePaths,
+    ['_husky', '_vscode', '_editorconfig', '_gitignore', '_prettierrc'],
+    project.directory
+  );
 
   fs.writeFile(
     `${project.directory}/ascendio.json`,

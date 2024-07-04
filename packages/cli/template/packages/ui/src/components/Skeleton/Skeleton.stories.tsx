@@ -2,9 +2,13 @@ import { StoryFn, Meta } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';
 
+/**
+ * An small example of loading an user avatar with Skeleton
+ */
 const meta: Meta = {
   title: 'Components/Skeleton',
   component: Skeleton,
+  tags: ['autodocs'],
 };
 
 export default meta;

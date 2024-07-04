@@ -10,8 +10,15 @@ const meta: Meta<ButtonProps> = {
   tags: ['autodocs'],
   argTypes: {
     variant: {
-      description: 'That shows the 5 variant types',
-      options: ['primary', 'secondary', 'outline', 'danger', 'link'],
+      description: 'That shows the 6 variant types',
+      options: [
+        'default',
+        'secondary',
+        'outline',
+        'destructive',
+        'ghost',
+        'link',
+      ],
       control: {
         type: 'radio',
       },
@@ -30,7 +37,7 @@ export default meta;
 export const Default: StoryFn<ButtonProps> = (args) => <Button {...args} />;
 
 Default.args = {
-  variant: 'primary',
+  variant: 'default',
   children: 'Hello Ascendio',
 };
 
@@ -41,7 +48,7 @@ export const FullWidth: StoryFn<ButtonProps> = (args) => (
 );
 
 FullWidth.args = {
-  variant: 'primary',
+  variant: 'default',
   children: 'Full Width Button',
 };
 
@@ -52,18 +59,18 @@ export const Disabled: StoryFn<ButtonProps> = (args) => (
 );
 
 Disabled.args = {
-  variant: 'primary',
+  variant: 'default',
   children: 'Hello Ascendio',
   disabled: true,
 };
 
-export const Danger: StoryFn<ButtonProps> = (args) => (
+export const Destructive: StoryFn<ButtonProps> = (args) => (
   <div className="grid grid-cols-6 gap-6">
     <Button {...args} className="w-full" />
   </div>
 );
 
-Danger.args = {
-  variant: 'danger',
+Destructive.args = {
+  variant: 'destructive',
   children: 'Hello Ascendio',
 };

@@ -1,14 +1,12 @@
-import React from 'react';
-import { tv } from 'tailwind-variants';
+import * as React from 'react';
 import { PatternFormat, PatternFormatProps } from 'react-number-format';
-
+import classNames from 'classnames';
+import { tv } from 'tailwind-variants';
 export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  format?: string;
-}
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-export const inputVariants = tv({
-  base: 'flex h-10 w-full rounded-md border border-gray-200 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-black/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-black disabled:cursor-not-allowed disabled:opacity-50 disabled:bg-black/10',
+const inputVariants = tv({
+  base: 'flex h-10 w-full rounded-md border border-input text-foreground bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
 });
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -16,7 +14,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         type={type}
-        className={inputVariants({ className })}
+        className={classNames(inputVariants({ className }))}
         ref={ref}
         {...props}
       />

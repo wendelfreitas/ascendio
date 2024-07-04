@@ -1,7 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import { Switch } from './Switch';
 import { useState } from 'react';
-import { Label } from '../Label/Label';
 
 const meta: Meta = {
   title: 'Components/Switch',
@@ -21,7 +20,13 @@ export const Default: StoryFn = () => {
         id="super-saiyan-mode"
         aria-label="Super Saiyan mode"
       />
-      <Label htmlFor="super-saiyan-mode">Super Saiyan mode</Label>
+      <label
+        htmlFor="super-saiyan-mode"
+        aria-label="Super Saiyan"
+        className="text-sm font-medium leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      >
+        Super Saiyan
+      </label>
     </div>
   );
 };

@@ -1,11 +1,11 @@
-import { screen, fireEvent, waitFor, render } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 
 import { Input, InputMask } from './Input';
 
 describe('<Input />', () => {
   it('should renders component successfully', () => {
-    render(<Input placeholder="Nome completo" />);
-    const text = screen.getByPlaceholderText('Nome completo');
+    render(<Input placeholder="Name" />);
+    const text = screen.getByPlaceholderText('Name');
 
     expect(text).toBeInTheDocument();
   });

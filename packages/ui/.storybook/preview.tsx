@@ -14,7 +14,7 @@ export const decorators = [
     defaultTheme: 'light',
     themes: {
       light: '',
-      dark: 'dark bg-neutral-900',
+      dark: 'dark bg-background',
     },
   }),
 ];

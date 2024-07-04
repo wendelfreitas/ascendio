@@ -15,7 +15,8 @@ export const Default: StoryFn = () => (
     <div className="grid gap-1.5 leading-none">
       <label
         htmlFor="terms1"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        aria-label="Accept terms and conditions"
+        className="text-sm font-medium leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
         Accept terms and conditions
       </label>
