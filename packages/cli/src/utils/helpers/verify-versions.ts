@@ -37,14 +37,6 @@ function pnpmVersion() {
 }
 
 export const prerequisites = async () => {
-  const isPnpm =
-    process.env.npm_execpath && process.env.npm_execpath.includes('pnpm');
-
-  if (!isPnpm) {
-    logger.error(`For now, Ascendion is only avaiable using pnpm.\n`);
-    process.exit(1);
-  }
-
   const [node, pnpm] = await Promise.all([nodeVersion(), pnpmVersion()]);
 
   if (!semver.gt(node, '18.16.0')) {
@@ -54,9 +46,9 @@ export const prerequisites = async () => {
     process.exit(1);
   }
 
-  if (!semver.gt(pnpm, '9.2.0')) {
+  if (!semver.gt(pnpm, '8.15.6')) {
     logger.error(
-      `Error: You are using pnpm ${pnpm}. To use Ascendio, pnpm version >= 9.3.0 is required.\n`
+      `Error: You are using pnpm ${pnpm}. To use Ascendio, pnpm version >= 8.15.6 is required.\n`
     );
     process.exit(1);
   }

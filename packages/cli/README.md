@@ -1,6 +1,6 @@
 <h1 align="center">
 
-  <img src="https://imgur.com/JaWjyGa.png" alt="Ascendio" height="800" >
+  <img src="https://imgur.com/JaWjyGa.png" alt="Ascendio" height="500" width="550" >
 
 </h1>
 
