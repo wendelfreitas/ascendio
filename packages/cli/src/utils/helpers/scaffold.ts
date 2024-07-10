@@ -8,6 +8,9 @@ import { replaceWordInFiles } from './replace-word-in-files';
 import { checkIfExists } from './check-if-project-exists';
 import { Project } from '../types';
 import { cleanProject } from './clean-project';
+import { removeUnusedAddons } from './remove-unused-addons';
+import { createComponentsIndexFile } from './create-components-index-file';
+import { removeUnusedDependencies } from './remove-unused-dependencies';
 
 export const scaffold = async (project: Project) => {
   const template = path.join(PACKAGE_ROOT, 'template');
@@ -34,7 +37,13 @@ export const scaffold = async (project: Project) => {
 
   const filePaths = getAllFilePaths(project.directory);
 
-  replaceWordInFiles(filePaths, 'ascendio', `${project.name}`);
+  await replaceWordInFiles(filePaths, 'ascendio', `${project.name}`);
+
+  removeUnusedAddons(project, filePaths);
+
+  await removeUnusedDependencies(project);
+
+  createComponentsIndexFile(project);
 
   fs.writeFile(
     `${project.directory}/ascendio.json`,

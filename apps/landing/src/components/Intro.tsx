@@ -45,8 +45,11 @@ export function Intro() {
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
         Designed to simplify the initial setup of your turborepo project. Ideal
-        for indie developers or people looking to create a micro SaaS.
+        for indie developers or people looking to create a micro SaaS using most
+        amazing packages such as Nextjs, Vite, shadcn-ui, Jest, Storybook and
+        more.
       </p>
+
       <div className="relative mb-1 isolate mt-8 flex items-center pr-1">
         <pre className="peer w-0 flex-auto bg-transparent px-4 py-2.5 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-[0.8125rem]/6">
           pnpm dlx ascendio@beta create

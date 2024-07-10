@@ -51,13 +51,48 @@ export const COMPONENTS_DEPENDENCY: {
     packages: string[];
   };
 } = {
+  Accordion: {
+    components: [],
+    packages: ['@radix-ui/react-accordion'],
+  },
   Button: {
     components: ['Label'],
     packages: [],
   },
 
   Label: {
-    components: ['Button', 'Accordion'],
+    components: [],
     packages: [],
   },
 };
+
+export const STORYBOOK_DEPENDENCIES = [
+  'storybook',
+  '@chromatic-com/storybook',
+  '@storybook/addon-a11y',
+  '@storybook/addon-essentials',
+  '@storybook/addon-interactions',
+  '@storybook/addon-links',
+  '@storybook/addon-onboarding',
+  '@storybook/addon-styling-webpack',
+  '@storybook/addon-themes',
+  '@storybook/addon-webpack5-compiler-swc',
+  '@storybook/blocks',
+  '@storybook/react',
+  '@storybook/react-webpack5',
+  '@storybook/test',
+  'eslint-plugin-storybook',
+  'css-loader',
+  'postcss-loader',
+  'style-loader',
+];
+
+export const TESTS_DEPENDENCIES = [
+  '@testing-library/dom',
+  '@testing-library/jest-dom',
+  '@testing-library/react',
+  '@testing-library/user-event',
+  '@types/jest',
+  'jest',
+  'jest-environment-jsdom',
+];
