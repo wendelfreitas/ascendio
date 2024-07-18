@@ -34,35 +34,192 @@ export const DESCRIPTION = `Ascendio ${chalk.italic('(A-CÊN-dio)')}  \n\n${chal
 
 export const HELLO_ASCENDIO = LETTERS.join('');
 
-export const COMPONENTS = [
-  'Accordion',
-  'Alert',
-  'Button',
-  'Checkbox',
-  'Input',
-  'Label',
-  'Skeleton',
-  'Switch',
-];
-
-export const COMPONENTS_DEPENDENCY: {
+type Components = {
   [key: string]: {
     components: string[];
     packages: string[];
   };
-} = {
+};
+
+export const COMPONENTS: Components = {
   Accordion: {
-    components: [],
+    components: ['@radix-ui/react-alert-dialog'],
     packages: ['@radix-ui/react-accordion'],
   },
-  Button: {
-    components: ['Label'],
+
+  Alert: {
+    components: [],
     packages: [],
+  },
+
+  AlertDialog: {
+    components: ['Button'],
+    packages: ['@radix-ui/react-alert-dialog'],
+  },
+
+  Avatar: {
+    components: [],
+    packages: ['@radix-ui/react-avatar'],
+  },
+
+  Badge: {
+    components: [],
+    packages: [],
+  },
+
+  Breadcrumb: {
+    components: [],
+    packages: ['@radix-ui/react-slot'],
+  },
+
+  Button: {
+    components: [],
+    packages: ['@radix-ui/react-slot'],
+  },
+
+  Calendar: {
+    components: ['Button'],
+    packages: ['react-day-picker', 'date-fns'],
+  },
+
+  Card: {
+    components: [],
+    packages: [],
+  },
+
+  Checkbox: {
+    components: [],
+    packages: ['@radix-ui/react-checkbox'],
+  },
+
+  Collapsible: {
+    components: [],
+    packages: ['@radix-ui/react-collapsible'],
+  },
+
+  Command: {
+    components: ['Dialog'],
+    packages: ['cmdk'],
+  },
+
+  ContextMenu: {
+    components: ['Dialog'],
+    packages: ['@radix-ui/react-context-menu'],
+  },
+
+  Dialog: {
+    components: [],
+    packages: ['@radix-ui/react-dialog'],
+  },
+
+  Drawer: {
+    components: [],
+    packages: ['vault'],
+  },
+
+  DropdownMenu: {
+    components: [],
+    packages: ['@radix-ui/react-dropdown-menu'],
+  },
+
+  HoverCard: {
+    components: [],
+    packages: ['@radix-ui/react-hover-card'],
+  },
+
+  Input: {
+    components: ['Label'],
+    packages: ['react-number-format'],
   },
 
   Label: {
     components: [],
+    packages: ['@radix-ui/react-label'],
+  },
+
+  Menubar: {
+    components: [],
+    packages: ['@radix-ui/react-menubar'],
+  },
+
+  NavigationMenu: {
+    components: [],
+    packages: ['@radix-ui/react-navigation-menu'],
+  },
+
+  Popover: {
+    components: [],
+    packages: ['@radix-ui/react-popover'],
+  },
+
+  Progress: {
+    components: [],
+    packages: ['@radix-ui/react-progress'],
+  },
+
+  RadioGroup: {
+    components: [],
+    packages: ['@radix-ui/react-radio-group'],
+  },
+
+  Select: {
+    components: [],
+    packages: ['@radix-ui/react-select'],
+  },
+
+  Separator: {
+    components: [],
+    packages: ['@radix-ui/react-separator'],
+  },
+
+  Sheet: {
+    components: [],
+    packages: ['@radix-ui/react-dialog'],
+  },
+
+  Skeleton: {
+    components: [],
     packages: [],
+  },
+
+  Slider: {
+    components: [],
+    packages: ['@radix-ui/react-slider'],
+  },
+
+  Switch: {
+    components: [],
+    packages: ['@radix-ui/react-switch'],
+  },
+
+  Table: {
+    components: [],
+    packages: [],
+  },
+
+  Tabs: {
+    components: [],
+    packages: ['@radix-ui/react-tabs'],
+  },
+
+  Textarea: {
+    components: [],
+    packages: [],
+  },
+
+  Toggle: {
+    components: [],
+    packages: ['@radix-ui/react-toggle'],
+  },
+
+  ToggleGroup: {
+    components: ['Toggle'],
+    packages: ['@radix-ui/react-toggle-group'],
+  },
+
+  Tooltip: {
+    components: [],
+    packages: ['@radix-ui/react-tooltip'],
   },
 };
 
@@ -95,4 +252,5 @@ export const TESTS_DEPENDENCIES = [
   '@types/jest',
   'jest',
   'jest-environment-jsdom',
+  'resize-observer-polyfill',
 ];

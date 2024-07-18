@@ -90,9 +90,9 @@ export async function run() {
       components: () =>
         p.multiselect({
           required: false,
-          initialValues: COMPONENTS,
+          initialValues: Object.keys(COMPONENTS),
           message: `Which components do you want to add to your UI package? ${chalk.gray('(Press A to add/remove all or Enter to submit)')}`,
-          options: COMPONENTS.map((component) => ({
+          options: Object.keys(COMPONENTS).map((component) => ({
             label: component,
             value: component,
           })),

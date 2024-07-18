@@ -1,9 +1,9 @@
-import { COMPONENTS_DEPENDENCY } from '../constants';
+import { COMPONENTS } from '../constants';
 
 function getDependencies(component: string, resolved = new Set()) {
   if (resolved.has(component)) return [];
 
-  const dependencies = COMPONENTS_DEPENDENCY[component]?.components || [];
+  const dependencies = COMPONENTS[component]?.components || [];
   resolved.add(component);
 
   let result: string[] = [];

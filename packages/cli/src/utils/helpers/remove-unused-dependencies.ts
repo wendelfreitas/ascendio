@@ -1,6 +1,6 @@
 import path from 'path';
 import * as fs from 'fs';
-import { COMPONENTS_DEPENDENCY } from '../constants';
+import { COMPONENTS } from '../constants';
 import { Project } from '../types';
 
 export const removeUnusedDependencies = async (project: Project) => {
@@ -14,9 +14,9 @@ export const removeUnusedDependencies = async (project: Project) => {
   const packageJson = JSON.parse(data);
   const dependencies = packageJson.dependencies || {};
 
-  Object.keys(COMPONENTS_DEPENDENCY).forEach((component) => {
+  Object.keys(COMPONENTS).forEach((component) => {
     if (!project.components.includes(component)) {
-      const dependencyInfo = COMPONENTS_DEPENDENCY[component];
+      const dependencyInfo = COMPONENTS[component];
       if (dependencyInfo) {
         dependencyInfo.packages.forEach((pkg) => {
           if (dependencies[pkg]) {
