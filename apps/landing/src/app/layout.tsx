@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from '@/app/providers';
 import localFont from 'next/font/local';
-import clsx from 'classnames';
+import { cn } from '@ascendio/utils/helpers';
 
 import '@/styles/tailwind.css';
 
@@ -57,7 +57,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx('h-full antialiased', inter.variable, monaSans.variable)}
+      className={cn('h-full antialiased', inter.variable, monaSans.variable)}
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
