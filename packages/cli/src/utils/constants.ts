@@ -43,7 +43,7 @@ type Components = {
 
 export const COMPONENTS: Components = {
   Accordion: {
-    components: ['@radix-ui/react-alert-dialog'],
+    components: [],
     packages: ['@radix-ui/react-accordion'],
   },
 
@@ -130,6 +130,11 @@ export const COMPONENTS: Components = {
   Input: {
     components: ['Label'],
     packages: ['react-number-format'],
+  },
+
+  InputOTP: {
+    components: ['Label'],
+    packages: ['input-otp'],
   },
 
   Label: {

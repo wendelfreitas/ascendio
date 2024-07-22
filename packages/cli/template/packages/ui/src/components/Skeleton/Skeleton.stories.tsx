@@ -6,7 +6,7 @@ import { Skeleton } from './Skeleton';
  * An small example of loading an user avatar with Skeleton
  */
 const meta: Meta = {
-  title: 'Components/Skeleton',
+  title: 'shadcn-ui/Skeleton',
   component: Skeleton,
   tags: ['autodocs'],
 };

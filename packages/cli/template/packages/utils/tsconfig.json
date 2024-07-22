@@ -1,9 +1,10 @@
 {
   "extends": "@ascendio/typescript-config/base.json",
   "compilerOptions": {
+    "types": ["jest"],
     "outDir": "dist",
     "rootDir": "src",
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "Node"
   },
   "include": ["src"],

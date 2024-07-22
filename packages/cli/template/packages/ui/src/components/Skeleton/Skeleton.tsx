@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cn } from '@ascendio/utils/helpers';
 
 export const Skeleton = ({
   className,
@@ -6,7 +6,7 @@ export const Skeleton = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className={classNames('animate-pulse rounded-md bg-black/15', className)}
+      className={cn('animate-pulse rounded-md bg-black/15', className)}
       {...props}
     />
   );

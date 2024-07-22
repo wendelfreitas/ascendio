@@ -6,4 +6,10 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [],
   setupFilesAfterEnv: ['./.jest/setup.ts'],
+  transformIgnorePatterns: [
+    'node_modules/(?!(@ascendio|utils)/)', // Add any other packages here
+  ],
+  moduleNameMapper: {
+    '^@ascendio/(.*)$': '<rootDir>/../utils/src/helpers', // Adjust this according to your monorepo structure
+  },
 };

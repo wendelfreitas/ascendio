@@ -8,7 +8,7 @@ enum THEME {
 }
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(THEME.LIGHT);
+  const [theme, setTheme] = useState(THEME.DARK);
 
   useEffect(() => {
     const root = document.documentElement;

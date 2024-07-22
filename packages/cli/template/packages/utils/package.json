@@ -2,7 +2,12 @@
   "name": "@ascendio/utils",
   "version": "0.0.0",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "pnpm run test --watch"
+  },
   "exports": {
     "./helpers": {
       "types": "./src/helpers/index.ts",
@@ -10,11 +15,17 @@
     }
   },
   "devDependencies": {
-    "@ascendio/typescript-config": "workspace:*",
     "@ascendio/eslint-config": "workspace:*",
+    "@ascendio/typescript-config": "workspace:*",
+    "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "eslint": "^8.57.0",
+    "jest": "^29.7.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0"
   }
 }

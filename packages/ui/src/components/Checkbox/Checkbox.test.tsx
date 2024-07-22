@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Checkbox } from './Checkbox';
 
 describe('<Checkbox />', () => {
-  it('renders component successfully', () => {
+  it('should render component successfully', () => {
     render(
       <div className="items-top flex space-x-2">
         <Checkbox id="terms1" />
@@ -24,7 +24,7 @@ describe('<Checkbox />', () => {
     expect(text).toBeInTheDocument();
   });
 
-  it('renders component with disabled styles', () => {
+  it('should render component with disabled styles', () => {
     const result = render(
       <div className="items-top flex space-x-2">
         <Checkbox id="terms1" disabled />

@@ -3,7 +3,7 @@ import { Switch } from './Switch';
 import { useState } from 'react';
 
 const meta: Meta = {
-  title: 'Components/Switch',
+  title: 'shadcn-ui/Switch',
   component: Switch,
 };
 

@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { Label } from './Label';
 
 const meta: Meta = {
-  title: 'Components/Label',
+  title: 'shadcn-ui/Label',
   component: Label,
   tags: ['autodocs'],
   argTypes: {

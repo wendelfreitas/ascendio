@@ -1,7 +1,7 @@
 {
   "extends": "@ascendio/typescript-config/react-library.json",
   "compilerOptions": {
-    "types": [],
+    "types": ["jest"],
     "allowUmdGlobalAccess": true,
     "outDir": "dist",
     "jsx": "react-jsx",

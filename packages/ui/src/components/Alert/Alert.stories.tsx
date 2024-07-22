@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from './Alert';
 import { Terminal } from 'lucide-react';
 
 const meta: Meta = {
-  title: 'Components/Alert',
+  title: 'shadcn-ui/Alert',
   component: Alert,
 };
 

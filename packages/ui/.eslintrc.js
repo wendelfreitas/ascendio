@@ -2,6 +2,8 @@
 module.exports = {
   env: {
     jest: true,
+    browser: true,
+    node: true,
   },
   root: true,
   extends: [
@@ -12,5 +14,8 @@ module.exports = {
   parserOptions: {
     project: './tsconfig.lint.json',
     tsconfigRootDir: __dirname,
+  },
+  rules: {
+    'no-redeclare': ['error', { builtinGlobals: false }],
   },
 };

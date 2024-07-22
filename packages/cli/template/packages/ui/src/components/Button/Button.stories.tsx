@@ -6,7 +6,7 @@ import { Button, ButtonProps } from './Button';
  * These stories showcase the button
  */
 const meta: Meta<ButtonProps> = {
-  title: 'Components/Button',
+  title: 'shadcn-ui/Button',
   tags: ['autodocs'],
   argTypes: {
     variant: {

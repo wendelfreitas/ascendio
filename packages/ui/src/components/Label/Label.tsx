@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { tv, type VariantProps } from 'tailwind-variants';
-import classNames from 'classnames';
+import { cn } from '@ascendio/utils/helpers';
 
 const labelVariants = tv({
   base: 'text-sm text-foreground font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
@@ -16,7 +16,7 @@ export const Label = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={classNames(labelVariants({ className }))}
+    className={cn(labelVariants({ className }))}
     {...props}
   />
 ));

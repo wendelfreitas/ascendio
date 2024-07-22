@@ -3,7 +3,7 @@ import { StoryFn, Meta } from '@storybook/react';
 import { Checkbox } from './Checkbox';
 
 const meta: Meta = {
-  title: 'Components/Checkbox',
+  title: 'shadcn-ui/Checkbox',
   component: Checkbox,
 };
 

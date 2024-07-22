@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PatternFormat, PatternFormatProps } from 'react-number-format';
-import classNames from 'classnames';
 import { tv } from 'tailwind-variants';
+import { cn } from '@ascendio/utils/helpers';
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
@@ -14,7 +14,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         type={type}
-        className={classNames(inputVariants({ className }))}
+        className={cn(inputVariants({ className }))}
         ref={ref}
         {...props}
       />
