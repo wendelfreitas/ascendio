@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from '@/app/providers';
 import localFont from 'next/font/local';
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '../utils/helpers';
 
 import '@/styles/tailwind.css';
 

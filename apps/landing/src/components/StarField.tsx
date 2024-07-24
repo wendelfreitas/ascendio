@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useRef } from 'react';
 import { type TimelineSegment, animate, timeline } from 'motion';
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '../utils/helpers';
 
 type Star = [x: number, y: number, dim?: boolean, blur?: boolean];
 

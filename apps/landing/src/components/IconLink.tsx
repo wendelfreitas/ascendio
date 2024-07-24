@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { cn } from '@ascendio/utils/helpers';
+import { cn } from '../utils/helpers';
 
 export function IconLink({
   children,
