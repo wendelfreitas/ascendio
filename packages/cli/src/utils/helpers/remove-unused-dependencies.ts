@@ -21,7 +21,6 @@ export const removeUnusedDependencies = async (project: Project) => {
         dependencyInfo.packages.forEach((pkg) => {
           if (dependencies[pkg]) {
             delete dependencies[pkg];
-            console.log(`Removido ${pkg} das dependências`);
           }
         });
       }

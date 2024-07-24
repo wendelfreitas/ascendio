@@ -1,5 +1,6 @@
 import fs from 'fs-extra';
 import { Project } from '../types';
+import { checkAndRemoveTestDependencies } from './check-and-remove-test-dependencies';
 
 export const remove = (directory: string) =>
   fs.rmSync(directory, {
@@ -21,5 +22,9 @@ export const cleanProject = (project: Project) => {
 
   if (!project.packages.includes('cli')) {
     remove(`${project.directory}/packages/cli`);
+  }
+
+  if (project.addons.includes('tests')) {
+    checkAndRemoveTestDependencies(project);
   }
 };

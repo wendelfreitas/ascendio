@@ -99,7 +99,7 @@ export const COMPONENTS: Components = {
 
   Command: {
     components: ['Dialog'],
-    packages: ['cmdk'],
+    packages: ['cmdk', 'resize-observer-polyfill'],
   },
 
   ContextMenu: {
@@ -124,7 +124,7 @@ export const COMPONENTS: Components = {
 
   HoverCard: {
     components: [],
-    packages: ['@radix-ui/react-hover-card'],
+    packages: ['@radix-ui/react-hover-card', 'resize-observer-polyfill'],
   },
 
   Input: {
@@ -134,7 +134,7 @@ export const COMPONENTS: Components = {
 
   InputOTP: {
     components: ['Label'],
-    packages: ['input-otp'],
+    packages: ['input-otp', 'resize-observer-polyfill'],
   },
 
   Label: {
@@ -149,7 +149,7 @@ export const COMPONENTS: Components = {
 
   NavigationMenu: {
     components: [],
-    packages: ['@radix-ui/react-navigation-menu'],
+    packages: ['@radix-ui/react-navigation-menu', 'resize-observer-polyfill'],
   },
 
   Popover: {
@@ -189,7 +189,7 @@ export const COMPONENTS: Components = {
 
   Slider: {
     components: [],
-    packages: ['@radix-ui/react-slider'],
+    packages: ['@radix-ui/react-slider', 'resize-observer-polyfill'],
   },
 
   Switch: {
@@ -224,7 +224,7 @@ export const COMPONENTS: Components = {
 
   Tooltip: {
     components: [],
-    packages: ['@radix-ui/react-tooltip'],
+    packages: ['@radix-ui/react-tooltip', 'resize-observer-polyfill'],
   },
 };
 
