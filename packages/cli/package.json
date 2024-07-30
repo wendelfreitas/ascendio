@@ -1,6 +1,6 @@
 {
   "name": "ascendio",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "An CLI designed to simplify the initial setup of your turborepo project. Ideal for indie developers or people looking to create a micro SaaS.",
   "publishConfig": {
     "access": "public"

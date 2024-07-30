@@ -46,7 +46,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss-loader": "^8.1.1",
     "resize-observer-polyfill": "^1.5.1",
-    "storybook": "^8.1.11",
+    "storybook": "^8.2.4",
     "style-loader": "^4.0.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-jest": "^29.1.5",
