@@ -7,9 +7,6 @@ import {
   TooltipTrigger,
 } from './Tooltip';
 import userEvent from '@testing-library/user-event';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<Tooltip />', () => {
   it('renders component successfully', () => {

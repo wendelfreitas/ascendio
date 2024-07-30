@@ -1,9 +1,6 @@
 import { act, render, screen, waitFor } from '@testing-library/react';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from './HoverCard';
 import userEvent from '@testing-library/user-event';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<HoverCard />', () => {
   it('should render component successfully', async () => {

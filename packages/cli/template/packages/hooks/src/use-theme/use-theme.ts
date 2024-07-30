@@ -2,17 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
-enum THEME {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
-
 export const useTheme = () => {
-  const [theme, setTheme] = useState(THEME.DARK);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === THEME.DARK) {
+    if (theme === 'dark') {
       root.classList.add('dark');
     } else {
       root.classList.remove('dark');
@@ -20,9 +15,7 @@ export const useTheme = () => {
   }, [theme]);
 
   const toggle = () => {
-    setTheme((prevTheme) =>
-      prevTheme === THEME.DARK ? THEME.LIGHT : THEME.DARK
-    );
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
   return { theme, toggle };

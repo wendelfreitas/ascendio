@@ -11,6 +11,7 @@ import { cleanProject } from './clean-project';
 import { removeUnusedAddons } from './remove-unused-addons';
 import { createComponentsIndexFile } from './create-components-index-file';
 import { removeUnusedDependencies } from './remove-unused-dependencies';
+import { removeUnusedComponents } from './remove-unused-components';
 
 export const scaffold = async (project: Project) => {
   const template = path.join(PACKAGE_ROOT, 'template');
@@ -38,6 +39,8 @@ export const scaffold = async (project: Project) => {
   const filePaths = getAllFilePaths(project.directory);
 
   await replaceWordInFiles(filePaths, 'ascendio', `${project.name}`);
+
+  removeUnusedComponents(project);
 
   removeUnusedAddons(project, filePaths);
 

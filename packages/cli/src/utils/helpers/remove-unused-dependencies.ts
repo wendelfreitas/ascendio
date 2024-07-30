@@ -3,6 +3,8 @@ import * as fs from 'fs';
 import { COMPONENTS } from '../constants';
 import { Project } from '../types';
 
+const exceptions = ['react', 'lucide-react'];
+
 export const removeUnusedDependencies = async (project: Project) => {
   const packageJsonPath = path.join(
     project.directory,
@@ -14,18 +16,27 @@ export const removeUnusedDependencies = async (project: Project) => {
   const packageJson = JSON.parse(data);
   const dependencies = packageJson.dependencies || {};
 
+  let packages: string[] = [];
+
   Object.keys(COMPONENTS).forEach((component) => {
-    if (!project.components.includes(component)) {
+    if (project.components.includes(component)) {
       const dependencyInfo = COMPONENTS[component];
       if (dependencyInfo) {
-        dependencyInfo.packages.forEach((pkg) => {
-          if (dependencies[pkg]) {
-            delete dependencies[pkg];
-          }
-        });
+        packages.push(...dependencyInfo.packages);
       }
     }
   });
+
+  packages = [...new Set(packages)];
+
+  Object.keys(dependencies)
+    .filter((dependency) => !exceptions.includes(dependency))
+    .filter((dependency) => !dependency.includes('/utils'))
+    .forEach((pkg: string) => {
+      if (!packages.includes(pkg)) {
+        delete dependencies[pkg];
+      }
+    });
 
   packageJson.dependencies = dependencies;
 

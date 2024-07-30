@@ -114,7 +114,7 @@ export const COMPONENTS: Components = {
 
   Drawer: {
     components: [],
-    packages: ['vault'],
+    packages: ['vaul'],
   },
 
   DropdownMenu: {

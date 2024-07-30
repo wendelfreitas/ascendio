@@ -1,8 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { Slider } from './Slider';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<Slider />', () => {
   it('should change value when using keyboard events', () => {

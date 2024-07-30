@@ -1,5 +1,3 @@
-'use client';
-
 import { Button } from '@ascendio/ui';
 import { useTheme } from '@ascendio/hooks';
 

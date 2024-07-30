@@ -16,9 +16,6 @@ import {
   MenubarTrigger,
 } from './Menubar';
 import userEvent from '@testing-library/user-event';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<MenuBar />', () => {
   it('should render component successfully', async () => {

@@ -2,6 +2,7 @@
 
 import { Button } from '@ascendio/ui';
 import { useTheme } from '@ascendio/hooks';
+import Image from 'next/image';
 
 export default function Example() {
   const { theme, toggle } = useTheme();
@@ -21,16 +22,20 @@ export default function Example() {
       </div>
       <div className="text-center">
         {theme === 'dark' ? (
-          <img
+          <Image
             className="h-64 mx-auto mb-16 hidden dark:block"
-            src="https://imgur.com/L8XOtNX.png"
-            alt=""
+            src="/white-rocket.png"
+            alt="Ascendio White Rocket"
+            width={225}
+            height={256}
           />
         ) : (
-          <img
+          <Image
             className="h-64 mx-auto mb-16 block dark:hidden"
-            src="https://imgur.com/eIO3XN0.png"
-            alt=""
+            src="/black-rocket.png"
+            alt="Ascendio Black Rocket"
+            width={225}
+            height={256}
           />
         )}
 
@@ -42,15 +47,19 @@ export default function Example() {
           <span className="sr-only">Ascendio</span>
 
           {theme === 'dark' ? (
-            <img
+            <Image
               className="h-8 my-8 mx-auto hidden dark:block"
-              src="https://imgur.com/Gdq88JD.png"
+              src="/white-logo.png"
+              width={250}
+              height={100}
               alt="Ascendio"
             />
           ) : (
-            <img
+            <Image
               className="h-8 my-8 mx-auto block dark:hidden"
-              src="https://imgur.com/ZU0nrEF.png"
+              src="/black-logo.png"
+              width={250}
+              height={100}
               alt="Ascendio"
             />
           )}

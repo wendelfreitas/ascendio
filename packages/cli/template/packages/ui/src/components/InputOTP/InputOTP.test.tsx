@@ -5,9 +5,6 @@ import {
   InputOTPSeparator,
   InputOTPSlot,
 } from './InputOTP';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<InputOTP />', () => {
   it('should render component successfully', async () => {

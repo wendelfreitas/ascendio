@@ -9,9 +9,6 @@ import {
   NavigationMenuTrigger,
 } from './NavigationMenu';
 import userEvent from '@testing-library/user-event';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 describe('<NavigationMenu />', () => {
   it('should render component successfully', async () => {

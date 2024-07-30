@@ -21,9 +21,6 @@ import {
   CommandShortcut,
 } from './Command';
 import { DialogDescription, DialogTitle } from '../Dialog/Dialog';
-import ResizeObserver from 'resize-observer-polyfill';
-
-global.ResizeObserver = ResizeObserver;
 
 window.HTMLElement.prototype.scrollIntoView = function () {};
 
