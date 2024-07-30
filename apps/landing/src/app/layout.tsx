@@ -1,8 +1,9 @@
 import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Providers } from '@/app/providers';
-import localFont from 'next/font/local';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { cn } from '../utils/helpers';
+import localFont from 'next/font/local';
 
 import '@/styles/tailwind.css';
 
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body className="flex min-h-full flex-col bg-white dark:bg-gray-950">
         <Providers>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId="G-QKCY2J9M8G" />
     </html>
   );
 }
