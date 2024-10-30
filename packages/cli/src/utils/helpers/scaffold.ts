@@ -12,9 +12,10 @@ import { removeUnusedAddons } from './remove-unused-addons';
 import { createComponentsIndexFile } from './create-components-index-file';
 import { removeUnusedDependencies } from './remove-unused-dependencies';
 import { removeUnusedComponents } from './remove-unused-components';
+import cmd from 'node-cmd';
 
 export const scaffold = async (project: Project) => {
-  const template = path.join(PACKAGE_ROOT, 'template');
+  const template = path.join(PACKAGE_ROOT, 'template/daito');
 
   const spinner = ora(
     `Creating and ascending a awesome project in: ${project.directory}...\n`
@@ -32,7 +33,16 @@ export const scaffold = async (project: Project) => {
     process.exit(1);
   }
 
+  cmd.runSync(
+    `cd ${path.join(PACKAGE_ROOT, 'template')} && git clone https://github.com/wendelfreitas/daito`
+  );
+
   fs.copySync(template, project.directory);
+
+  fs.rmSync(template, {
+    recursive: true,
+    force: true,
+  });
 
   cleanProject(project);
 
