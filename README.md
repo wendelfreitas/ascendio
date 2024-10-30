@@ -1,6 +1,9 @@
 <h1 align="center">
   <br>
   <img src="https://www.ascendio.dev/_next/image?url=%2Fpreview-ascendio.png&w=3840&q=75" alt="Animavita" height="600" width="700">
+  <br/>
+  <br/>
+  <img src="https://www.ascendio.dev/_next/image?url=%2Fascendio.png&w=640&q=75" alt="Animavita" height="50" width="340">
 </h1>
 
 <p align="center">Ascend a turborepo project in seconds.</p>
